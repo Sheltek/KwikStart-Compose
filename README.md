@@ -10,7 +10,7 @@ This library offers a comprehensive set of Compose widgets and utility functions
 -   Leverage pre-built components for common UI patterns.
 
 ## Contributing
-We welcome contributions from all developers! If you're interested in getting involved, please refer to the  [`CONTRIBUTING.md`](./CONTRIBUTING.md) document for details.
+We welcome contributions from all developers! If you're interested in getting involved, please refer to the  [`CONTRIBUTING.md`](../KMP-LaunchpadUtilsDomain/CONTRIBUTING.md) document for details.
 
 ## What's in this library
 ### Convenience Functions
