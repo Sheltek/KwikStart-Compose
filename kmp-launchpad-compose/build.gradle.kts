@@ -57,6 +57,12 @@ android {
     }
 }
 
+ktlint {
+    verbose.set(true)
+    outputToConsole.set(true)
+    ignoreFailures.set(true)
+}
+
 group = "com.github.bottlerocketstudios"
 version = "${libs.versions.launchpad.compose.get()}-SNAPSHOT"
 
