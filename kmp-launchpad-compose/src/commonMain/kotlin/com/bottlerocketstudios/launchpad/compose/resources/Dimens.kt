@@ -1,7 +1,15 @@
-@file:Suppress("ConstructorParameterNaming", "MatchingDeclarationName", "LongParameterList")
-
+@file:Suppress(
+    "ConstructorParameterNaming",
+    "MatchingDeclarationName",
+    "LongParameterList",
+    "unused"
+)
 package com.bottlerocketstudios.launchpad.compose.resources
 
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
@@ -74,6 +82,8 @@ val smallDimensions = Dimensions(
     plane_5 = 12.dp
 )
 
+const val SMALL_SCREEN_WIDTH_DP = 360
+
 val sw360Dimensions = Dimensions(
     grid_0_25 = 2.dp,
     grid_0_5 = 4.dp,
@@ -101,3 +111,16 @@ val sw360Dimensions = Dimensions(
     plane_4 = 8.dp,
     plane_5 = 16.dp
 )
+
+@Composable
+fun ProvideDimens(
+    dimensions: Dimensions,
+    content: @Composable () -> Unit
+) {
+    val dimensionSet = remember { dimensions }
+    CompositionLocalProvider(LocalAppDimens provides dimensionSet, content = content)
+}
+
+val LocalAppDimens = staticCompositionLocalOf {
+    sw360Dimensions
+}
