@@ -45,6 +45,8 @@ kotlin {
             implementation(compose.ui)
         }
         commonTest.dependencies {
+            implementation(kotlin("test-common"))
+            implementation(kotlin("test-annotations-common"))
             implementation(libs.kotlin.test)
         }
     }
