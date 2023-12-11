@@ -5,7 +5,6 @@ import java.util.Locale
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-
 class CurrencyUtilsTest {
 
     @Test

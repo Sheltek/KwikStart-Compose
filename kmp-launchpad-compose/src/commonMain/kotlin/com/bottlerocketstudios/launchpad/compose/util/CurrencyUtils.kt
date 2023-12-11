@@ -1,6 +1,5 @@
 package com.bottlerocketstudios.launchpad.compose.util
 
-
 /**
  * Kotlin Multiplatform function - convertToCurrencyString
  *
