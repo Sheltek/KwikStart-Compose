@@ -5,6 +5,6 @@ import com.sheltek.kwikstart.compose.navigation.utils.NavigationItem
 import com.sheltek.kwikstart.compose.navigation.utils.toNavigationDrawerItems
 
 @Composable
-fun LaunchpadDrawerContent(navItems: List<NavigationItem>, isSelected: (String) -> Boolean) {
+fun KiwkStartDrawerContent(navItems: List<NavigationItem>, isSelected: (String) -> Boolean) {
     navItems.toNavigationDrawerItems(isSelected)
 }

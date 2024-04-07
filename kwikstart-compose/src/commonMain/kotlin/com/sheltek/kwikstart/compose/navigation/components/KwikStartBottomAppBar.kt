@@ -10,7 +10,7 @@ import com.sheltek.kwikstart.compose.navigation.utils.NavigationItem
 import com.sheltek.kwikstart.compose.navigation.utils.ToNavigationBarItems
 
 @Composable
-fun LaunchpadBottomAppBar(
+fun KwikStartBottomAppBar(
     navItems: List<NavigationItem>,
     isSelected: (String) -> Boolean
 ) {

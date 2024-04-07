@@ -20,9 +20,9 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import com.sheltek.kwikstart.compose.navigation.components.LaunchpadBottomAppBar
-import com.sheltek.kwikstart.compose.navigation.components.LaunchpadDrawerContent
-import com.sheltek.kwikstart.compose.navigation.components.LaunchpadNavigationRail
+import com.sheltek.kwikstart.compose.navigation.components.KwikStartBottomAppBar
+import com.sheltek.kwikstart.compose.navigation.components.KiwkStartDrawerContent
+import com.sheltek.kwikstart.compose.navigation.components.KwikStartNavigationRail
 import com.sheltek.kwikstart.compose.navigation.utils.DevicePosture
 import com.sheltek.kwikstart.compose.navigation.utils.NavigationItem
 import com.sheltek.kwikstart.compose.navigation.utils.NavigationType
@@ -69,14 +69,14 @@ fun NavigationWrapper(
         NavigationType.PERMANENT_NAVIGATION_DRAWER ->
             PermanentNavigationDrawer(
                 drawerContent = {
-                    PermanentDrawerSheet() { LaunchpadDrawerContent(navItems) { it == currentRoute?.route } }
+                    PermanentDrawerSheet() { KiwkStartDrawerContent(navItems) { it == currentRoute?.route } }
                 }
             ) { app(navigator) { } }
 
         NavigationType.MODAL_NAVIGATION ->
             ModalNavigationDrawer(
                 drawerState = drawerState,
-                drawerContent = { ModalDrawerSheet { LaunchpadDrawerContent(navItems) { it == currentRoute?.route } } }
+                drawerContent = { ModalDrawerSheet { KiwkStartDrawerContent(navItems) { it == currentRoute?.route } } }
             ) { app(navigator) { } }
 
         else -> Row {
@@ -85,7 +85,7 @@ fun NavigationWrapper(
                 enter = slideInVertically(animationSpec = spring(stiffness = Spring.StiffnessHigh)),
                 exit = slideOutHorizontally(animationSpec = spring(stiffness = Spring.StiffnessHigh))
             ) {
-                LaunchpadNavigationRail(navItems) {
+                KwikStartNavigationRail(navItems) {
                     it == currentRoute?.route
                 }
             }
@@ -100,7 +100,7 @@ fun NavigationWrapper(
                         enter = slideInVertically(animationSpec = spring(stiffness = Spring.StiffnessHigh)),
                         exit = slideOutHorizontally(animationSpec = spring(stiffness = Spring.StiffnessHigh))
                     ) {
-                        LaunchpadBottomAppBar(navItems) { it == currentRoute?.route }
+                        KwikStartBottomAppBar(navItems) { it == currentRoute?.route }
                     }
                 }
             }

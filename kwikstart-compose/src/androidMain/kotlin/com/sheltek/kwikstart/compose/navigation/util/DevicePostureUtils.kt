@@ -48,7 +48,7 @@ fun ComponentActivity.createDevicePostureFlow() = WindowInfoTracker.getOrCreate(
     )
 
 /**
- * Converts an Android [WindowWidthSizeClass] to a Launchpad [WindowWidthSizeClass].
+ * Converts an Android [WindowWidthSizeClass] to a KwikStart [WindowWidthSizeClass].
  *
  * @return The converted [WindowWidthSizeClass].
  */
