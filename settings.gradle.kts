@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Launchpad_Compose"
-include(":kmp-launchpad-compose")
+rootProject.name = "KwikStart_Compose"
+include(":kwikstart-compose")

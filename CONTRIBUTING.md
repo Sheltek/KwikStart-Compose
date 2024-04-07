@@ -11,7 +11,6 @@ To publish this library to github, you need to create a Personal Access Token (P
 - On github, create a Token (classic), for information on this please see https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 - Grant the following permissions to your PAT: **read:packages**, **write:packages**, and **repo**
 - Save the token in a safe place, i.e. 1Password.
-- Finally, authorize BottleRocketStudios to use your PAT.
 
 ### Specify user name and token as Shell Environment Variables
 - In your shell file like .bash_profile, .zshrc, OR .zlogin, add these two statements:
