@@ -32,6 +32,8 @@ kotlin {
         }
     }
 
+    jvm("desktop")
+
     sourceSets {
         androidMain.dependencies {
             implementation(compose.material3)
