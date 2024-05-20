@@ -8,10 +8,8 @@
 name: Gradle Package
 
 on:
-#  push:
-#    branches: [ "main" ]
-#  pull_request:
-#    branches: [ "main" ]
+  push:
+    branches: [ "deploy" ]
 
 jobs:
   build:
@@ -36,6 +34,7 @@ jobs:
         with:
           arguments: build
 
+
       # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
       # the publishing section of your build.gradle
       - name: Publish to GitHub Packages
@@ -43,4 +42,5 @@ jobs:
         with:
           arguments: publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PUBLISH_USERNAME: ${{ secrets.REPO_READ_WRITE_USER }}
+          GH_PUBLISH_PASSWORD: ${{ secrets.REPO_READ_WRITE_TOKEN }}

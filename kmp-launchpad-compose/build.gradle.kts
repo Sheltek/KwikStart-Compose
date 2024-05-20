@@ -21,16 +21,12 @@ kotlin {
         }
     }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
-            baseName = "kmp-launchpad-compose"
-            isStatic = true
-        }
-    }
+    jvm("desktop")
+    task("testClasses")
+
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
 
     sourceSets {
         androidMain.dependencies {
@@ -81,8 +77,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/BottleRocketStudios/KMP-LaunchPad-Compose")
             credentials {
-                username = System.getenv("REPO_READ_WRITE_USER")
-                password = System.getenv("REPO_READ_WRITE_TOKEN")
+                username = System.getenv("REPO_READ_WRITE_USER") ?: System.getenv("GH_PUBLISH_USERNAME")
+                password = System.getenv("REPO_READ_WRITE_TOKEN") ?: System.getenv("GH_PUBLISH_PASSWORD")
             }
         }
     }
