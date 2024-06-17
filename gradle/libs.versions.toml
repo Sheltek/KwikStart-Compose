@@ -1,6 +1,6 @@
 [versions]
 # Publishing version
-launchpad-compose = "0.1.0"
+launchpad-compose = "0.1.1"
 
 # Android SDK versions
 compile-sdk = "34"
