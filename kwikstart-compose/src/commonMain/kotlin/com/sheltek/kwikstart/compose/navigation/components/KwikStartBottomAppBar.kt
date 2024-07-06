@@ -17,7 +17,6 @@ fun KwikStartBottomAppBar(
     NavigationBar(
         Modifier
             .fillMaxWidth()
-            .height(72.dp)
     ) {
         ToNavigationBarItems(navItems, isSelected)
     }
