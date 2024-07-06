@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "KwikStart_Compose"
-include(":kwikstart-compose")
+include(":lib")
