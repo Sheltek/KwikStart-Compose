@@ -1,4 +1,5 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+// Must disable when module names contain dashes
+//enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     repositories {
         google()
@@ -8,7 +9,9 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    @Suppress("UnstableApiUsage")
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
     }
