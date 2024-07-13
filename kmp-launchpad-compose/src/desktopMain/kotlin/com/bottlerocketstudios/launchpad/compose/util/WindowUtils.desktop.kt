@@ -1,7 +1,7 @@
-package com.bottlerocketstudios.launchpad.compose.util
+package com.sheltek.kwikstart.compose.util
 
 import androidx.compose.ui.window.WindowState
-import com.bottlerocketstudios.launchpad.compose.navigation.utils.WindowWidthSizeClass
+import com.sheltek.kwikstart.compose.navigation.utils.WindowWidthSizeClass
 
 fun WindowState.getWindowWidthSizeClass() =
     when (size.width.value.toLong()) {

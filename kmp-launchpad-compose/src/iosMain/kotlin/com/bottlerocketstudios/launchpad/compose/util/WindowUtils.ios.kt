@@ -1,6 +1,6 @@
-package com.bottlerocketstudios.launchpad.compose.util
+package com.sheltek.kwikstart.compose.util
 
-import com.bottlerocketstudios.launchpad.compose.navigation.utils.WindowWidthSizeClass
+import com.sheltek.kwikstart.compose.navigation.utils.WindowWidthSizeClass
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.UIKit.UIWindow
 
