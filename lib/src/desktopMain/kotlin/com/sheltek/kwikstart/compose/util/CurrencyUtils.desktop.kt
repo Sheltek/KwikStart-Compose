@@ -1,5 +1,9 @@
 package com.sheltek.kwikstart.compose.util
 
+import java.text.NumberFormat
+import java.util.Currency
+import java.util.Locale
+
 /**
  * Kotlin Multiplatform function - convertToCurrencyString
  *
@@ -11,5 +15,8 @@ package com.sheltek.kwikstart.compose.util
  * @return A string representing that amount in the appropriate currency
  *         format for the device's current locale.
  */
-expect fun Double?.toCurrency(): String
-
+actual fun Double?.toCurrency(): String {
+    val numberFormat = NumberFormat.getCurrencyInstance()
+    numberFormat.currency = Currency.getInstance(Locale.getDefault())
+    return numberFormat.format(this ?: 0.0)
+}

@@ -8,9 +8,7 @@ import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
@@ -18,15 +16,17 @@ import androidx.compose.material3.PermanentDrawerSheet
 import androidx.compose.material3.PermanentNavigationDrawer
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.sheltek.kwikstart.compose.navigation.components.KwikStartBottomAppBar
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
 import com.sheltek.kwikstart.compose.navigation.components.KiwkStartDrawerContent
+import com.sheltek.kwikstart.compose.navigation.components.KwikStartBottomAppBar
 import com.sheltek.kwikstart.compose.navigation.components.KwikStartNavigationRail
 import com.sheltek.kwikstart.compose.navigation.utils.DevicePosture
 import com.sheltek.kwikstart.compose.navigation.utils.NavigationItem
@@ -34,11 +34,6 @@ import com.sheltek.kwikstart.compose.navigation.utils.NavigationType
 import com.sheltek.kwikstart.compose.navigation.utils.WindowWidthSizeClass
 import com.sheltek.kwikstart.compose.navigation.utils.generateNavItems
 import com.sheltek.kwikstart.compose.navigation.utils.toNavigationType
-import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.currentBackStackEntryAsState
-import androidx.navigation.compose.rememberNavController
 
 
 @Suppress("MemberVisibilityCanBePrivate")
@@ -97,13 +92,13 @@ fun NavigationWrapper(
         navigationType.value == NavigationType.MODAL_NAVIGATION && navState.shouldShowModalDrawer ->
             ModalNavigationDrawer(
                 drawerState = drawerState,
-                drawerContent = { ModalDrawerSheet { LaunchpadDrawerContent(navItems) { it == currentRoute } } }
+                drawerContent = { ModalDrawerSheet { KiwkStartDrawerContent(navItems) { it == currentRoute } } }
             ) { app(navigator) }
 
         //  Permanent Drawer
         navigationType.value == NavigationType.PERMANENT_NAVIGATION_DRAWER && navState.shouldShowPermanentDrawer ->
             PermanentNavigationDrawer(
-                drawerContent = { PermanentDrawerSheet { LaunchpadDrawerContent(navItems) { it == currentRoute } } }
+                drawerContent = { PermanentDrawerSheet { KiwkStartDrawerContent(navItems) { it == currentRoute } } }
             ) { app(navigator) }
 
         // Remaining states are animated in out around one central instance of app.
@@ -115,7 +110,7 @@ fun NavigationWrapper(
                     enter = slideInVertically(animationSpec = spring(stiffness = Spring.StiffnessHigh)),
                     exit = slideOutHorizontally(animationSpec = spring(stiffness = Spring.StiffnessHigh))
                 ) {
-                    LaunchpadNavigationRail(navItems) { it == currentRoute }
+                    KwikStartNavigationRail(navItems) { it == currentRoute }
                 }
 
                 Column(modifier = Modifier.fillMaxSize()) {
@@ -130,7 +125,7 @@ fun NavigationWrapper(
                         enter = slideInVertically(animationSpec = spring(stiffness = Spring.StiffnessHigh)),
                         exit = slideOutHorizontally(animationSpec = spring(stiffness = Spring.StiffnessHigh))
                     ) {
-                        LaunchpadBottomAppBar(navItems) { it == currentRoute }
+                        KwikStartBottomAppBar(navItems) { it == currentRoute }
                     }
                 }
             }

@@ -24,7 +24,7 @@ class MainActivityExample : ComponentActivity() {
             NavigationWrapper(
                 widthSize = getWindowWidthSize(this),
                 devicePosture = devicePosture.value,
-                navigationItems = exampleNavigationItems
+                navigationItems = emptyList()
             ) { navigator ->
 
 //                FIXME - after testing

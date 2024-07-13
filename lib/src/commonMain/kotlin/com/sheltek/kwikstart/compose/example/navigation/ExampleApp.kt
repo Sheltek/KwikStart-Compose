@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.bottlerocketstudios.launchpad.compose.navigation.utils.WindowWidthSizeClass
+import com.sheltek.kwikstart.compose.navigation.utils.WindowWidthSizeClass
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
